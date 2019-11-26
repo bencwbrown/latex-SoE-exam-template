@@ -1,0 +1,81 @@
+% ---------------------------------------------------------------------
+%
+%   The University of Edinburgh  -  School of Engineering
+%   LaTeX Exam template, v1.0 (beta) 
+%   School of Engineering, The University of Edinburgh (c) 2019
+%   This template is built upon the LaTeX exam style
+%   Comments / suggestions: F. Teixeira-Dias (f.teixeira-dias@ed.ac.uk)
+%                           A. Giannopoulos (a.giannopoulos@ed.ac.uk)
+%
+% ---------------------------------------------------------------------
+%
+%   NOTES:
+%   - Read the included "ReadMeFirst.txt" file before writing your exam
+%   - All figures/graphs/etc. should be in the folder "Images"
+%   - Create each question in a separate *.tex file
+%   - Lines with the "EDIT" comment can/should be edited
+%   - DO NOT edit or change the following files: SoECoverPage.tex
+%                                                SoEExam_aux.tex
+%
+% ---------------------------------------------------------------------
+\documentclass[a4paper,addpoints,fleqn,11pt]{exam} 
+
+% -----------------------------------------------------
+% EDIT - Course and exam information
+% -----------------------------------------------------
+\newcommand{\theCourseCode}{CODE12345}                % EDIT - Course code (e.g. MECE10002)
+\newcommand{\theCourse}{Course Title}                 % EDIT - Course title (e.g. Dynamics 4)
+\newcommand{\theExamDate}{Month Year}                 % EDIT - Date of exam (e.g. May 2019)
+\newcommand{\theDiet}{Main}                           % EDIT - Exam diet (Main OR Resit)
+\newcommand{\examOC}{Closed}                          % EDIT - Type of exam (Closed OR Open)
+\newcommand{\useCalculators}{Yes}                     % EDIT - Calculators allowed? (Yes OR No)
+\newcommand{\formulaSheet}{Yes}                       % EDIT - Formula sheet included? (Yes OR No)
+\newcommand{\separateBooks}{Yes}                      % EDIT - Answer parts in separate books? (Yes OR No)
+\newcommand{\numberQuestions}{All}                    % EDIT - Number of questions to answer. (e.g. All OR 3)
+\newcommand{\withSolutions}{Yes}                       % EDIT - Include solutions (Yes OR No) 
+
+% -----------------------------------------------------
+% BEGIN DOCUMENT
+% -----------------------------------------------------
+\input{SoEExam_aux}                                   % Document and style definitions
+\begin{document}                                      % Start of content
+\input{SoECoverPage.tex}                              % Cover page
+\begin{questions}                                     % Start questions
+
+% -----------------------------------------------------
+% EDIT - Exam structure - Sections and questions
+% -----------------------------------------------------
+% EDIT - Copy to add sections/questions
+% -----------------------------------------------------
+\sectionStart                                         % Start a new section
+\callQuestion{MCQuestion.tex}{15}                     % EDIT - Multiple-choice question file name and points
+
+% -----------------------------------------------------
+% EDIT - Copy to add sections/questions
+% -----------------------------------------------------
+\sectionStart                                         % Start a new section
+\callQuestion{ThisQuestion.tex}{20}                     % EDIT - Question file name and points
+\callQuestion{ThatQuestion.tex}{20}                     % EDIT - Question file name and points
+
+% -----------------------------------------------------
+% EDIT - Copy to add sections/questions
+% -----------------------------------------------------
+\sectionStart                                         % Start a new section
+\callQuestion{AnotherQuestion.tex}{20}                     % EDIT - Question file name and points
+\callQuestion{YetAnotherQuestion.tex}{20}                     % EDIT - Question file name and points
+
+% -----------------------------------------------------
+% End questions
+% -----------------------------------------------------
+\end{questions}                                       % End of sections and questions
+\vfill \medskip\hfill\textbf{END OF EXAM}             % End of exam paper
+
+% -----------------------------------------------------
+% DO NOT EDIT - Formula sheet
+% -----------------------------------------------------
+\callFormulaSheet{FormulaSheet.tex}                   % Include formula sheet
+
+% -----------------------------------------------------
+% End exam paper
+% -----------------------------------------------------
+\end{document}

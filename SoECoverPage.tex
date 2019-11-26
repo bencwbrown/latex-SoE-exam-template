@@ -1,0 +1,47 @@
+
+% -----------------------------------------------------
+% COVER PAGE - DO NOT EDIT
+% -----------------------------------------------------
+\begin{coverpages}                                    
+\begin{flushleft}                                    
+
+\includegraphics[height=20mm]{UoE_Engineering_K.jpg} \\ \vspace{10mm}
+
+\textbf{\Large \theCourseCode{} \theCourse{} --- \theExamDate{} (\theDiet)} \\
+\vspace{10mm}
+This exam paper consists of \NUMBERstringnum{\totvalue{numberOfSections}} sections \\
+%
+\ifthenelse{\equal{\numberQuestions}{All}}{Candidates should attempt ALL \NUMBERstringnum{\totvalue{numberOfQuestions}} questions \\}{Candidates should attempt \NUMBERstringnum{\numberQuestions} out of \NUMBERstringnum{\totvalue{numberOfQuestions}} questions \\}
+\vspace{5mm}
+%
+\ifthenelse{\equal{\separateBooks}{Yes} \OR \equal{\separateBooks}{Y} \OR \equal{\separateBooks}{yes} \OR \equal{\separateBooks}{y} \OR \equal{\separateBooks}{YES}}{Candidates should answer exam sections in different books\\}{}
+%
+% ----- FORMULA SHEET -----
+\ifthenelse{\equal{\formulaSheet}{Yes} \OR \equal{\formulaSheet}{Y} \OR \equal{\formulaSheet}{yes} \OR \equal{\formulaSheet}{y} \OR \equal{\formulaSheet}{YES}}{A formula sheet is included at the end of the paper \\}{}
+%
+% ----- SOLUTIONS -----
+\vspace{25mm} 
+\ifthenelse{\equal{\withSolutions}{Yes} \OR \equal{\withSolutions}{Y} \OR \equal{\withSolutions}{yes} \OR \equal{\withSolutions}{y} \OR \equal{\withSolutions}{YES}}{\textcolor{myRed}{\LARGE \textbf{~WARNING:} This copy includes marking guidelines~} \\}{}
+%
+\ifthenelse{\equal{\totvalue{pointsCounter}}{\numpoints}}{}{\vspace{8mm} \textcolor{myRed}{\LARGE \textbf{~CHECK:} Total marks (\total{pointsCounter}) different from sum parts (\numpoints)~}}
+%
+\vfill
+%
+\textbf{\large Notes for the ETO} \\
+This is a temporary cover page, please replace it \\
+%
+This exam is \total{pointsCounter} marks in total and has \NUMBERstringnum{\totvalue{numberOfQuestions}} questions\\ 
+%
+\ifthenelse{\equal{\numberQuestions}{All}}{Candidates should attempt all \NUMBERstringnum{\totvalue{numberOfQuestions}} questions \\}{Candidates should attempt \NUMBERstringnum{\numberQuestions} out of \NUMBERstringnum{\totvalue{numberOfQuestions}} questions \\}
+%
+This is a \MakeUppercase{\examOC{}}-book exam \\ 
+%
+\ifthenelse{\equal{\useCalculators}{Yes} \OR \equal{\useCalculators}{Y} \OR \equal{\useCalculators}{yes} \OR \equal{\useCalculators}{y} \OR \equal{\useCalculators}{YES}}{Use of calculators approved by the College of Science and Engineering is permitted}{Use of calculators approved by the College of Science and Engineering is NOT permitted}
+%
+\end{flushleft}
+\end{coverpages}
+\newpage
+%
+\ifthenelse{\equal{\withSolutions}{Yes} \OR \equal{\withSolutions}{Y} \OR \equal{\withSolutions}{yes} \OR \equal{\withSolutions}{y} \OR \equal{\withSolutions}{YES}}{\printanswers}{}
+
+

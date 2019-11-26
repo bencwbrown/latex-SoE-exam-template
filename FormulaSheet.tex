@@ -1,0 +1,67 @@
+% -------------------------------------------------------------
+% Formula sheet
+% -------------------------------------------------------------
+\headingFormulaSheet
+
+% ---------------------------------------------
+\subsection*{Title of group of formulas}
+%
+\[ \frac{\mathrm{d}}{\mathrm{d} t}\left(\frac{\partial T}{\partial\dot q_i}\right)-\frac{\partial T}{\partial q_i} + \frac{\partial V}{\partial q_i} = Q_i \]
+\[ T = \frac{1}{2}m\dot x^2 \]
+\[ T = \frac{1}{2}I\dot\varphi^2 \]
+\[ V_\mathrm{e} = \frac{1}{2}k\Delta x^2 \]
+\[ V_\mathrm{e} = \frac{1}{2}k_\mathrm{t}\Delta \alpha^2, \qquad k_\mathrm{t} = \frac{G\pi d^4}{32L} \]
+\[ V_\mathrm{g} = mgh \]
+\[ \delta W_i = Q_i\delta q_i \]
+
+% ---------------------------------------------
+\subsection*{Analytical dynamics}
+%
+\[ \frac{\mathrm{d}}{\mathrm{d} t}\left(\frac{\partial T}{\partial\dot q_i}\right)-\frac{\partial T}{\partial q_i} + \frac{\partial V}{\partial q_i} = Q_i \]
+\[ T = \frac{\rho A}{2}\int_0^L\left(\frac{\partial w}{\partial t}\right)^2\mathrm{d} x \]
+\[ V_\mathrm{e} = \frac{EI}{2}\int_0^L\left(\frac{\partial^2 w}{\partial x^2}\right)^2\mathrm{d} x \]
+\[ V_\mathrm{g} = \rho Ag\int_0^L w(x,t)\mathrm{d} x \]
+\[ Q_i = \varphi_i(b)F \]
+\[ Q_i(t) = \int_0^L \varphi_i(x)f(x,t)\mathrm{d} x \]
+
+% ---------------------------------------------
+\subsection*{Longitudinal waves}
+%
+\[ \frac{\partial^2 \Phi}{\partial t^2} = c^2\left( \frac{\partial^2 \Phi}{\partial x^2} \right) \]
+\[ \frac{\partial^2 u}{\partial t^2} = \frac{E}{\rho}\left( \frac{\partial^2 u}{\partial x^2} \right) \]
+\[ \frac{\partial^2 w}{\partial t^2} = \frac{T}{\mu}\left( \frac{\partial^2 w}{\partial x^2} \right) \]
+\[ \frac{\partial^2 \theta}{\partial t^2} = \frac{G}{\rho}\left( \frac{\partial^2 \theta}{\partial x^2} \right) \]
+\[ u(x,t) = f(x)g(t) \]
+
+% ---------------------------------------------
+\subsection*{Transverse waves}
+%
+\[ \frac{\partial^2 w}{\partial t^2} + \frac{\partial^2}{\partial x^2} \left(\frac{EI}{\rho A}\frac{\partial^2w}{\partial x^2}\right) = 0 \]
+\[ \rho A\frac{\partial^2 w}{\partial t^2} + EI\frac{\partial^4w}{\partial x^4} = 0 \]
+\[ w(x,t) = B\sin\left[ \frac{2\pi}{\lambda} (x-ct) \right] \]
+\[ w(x,t) = \phi(x)\cos(\omega t) \]
+\[ \frac{\partial^4\phi(x)}{\partial x^4} - k^4\phi(x) = 0 \]
+\[ \omega = \frac{2\pi c}{\lambda}, \qquad f = \frac{c}{\lambda} \]
+\[ k^4 = \frac{\rho A\omega^2}{EI}, \qquad k=\frac{\omega}{c} \]
+
+% ---------------------------------------------
+\subsection*{Chemical reactions}
+%
+\[ \ce{x Na(NH4)HPO4 ->[\Delta] (NaPO3)_x + x NH3 ^ + x H2O} \]
+\[ \ce{SO4^2- + Ba^2+ -> BaSO4 v} \]
+
+% ---------------------------------------------
+\subsection*{Tables and data}
+
+\begin{tabular}{lrr}  
+\toprule
+\multicolumn{2}{c}{Item} \\
+\cmidrule(r){1-2}
+Property        & Value         & Units         \\ \midrule
+Force           & \num{1.0}     & \si{N}        \\
+Acceleration    & \num{3.4}     & \si{m/s^2}    \\
+Temperature     & \num{-250}    & \si{K}        \\
+Energy          & \num{200}     & \si{J}    \\
+Potatoes        & Frozen        & Count         \\
+\bottomrule
+\end{tabular}

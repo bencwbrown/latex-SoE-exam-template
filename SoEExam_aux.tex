@@ -1,0 +1,122 @@
+
+% -------------------------------------------------------------
+% PACKAGES
+% -------------------------------------------------------------
+\usepackage{microtype}                                % Tweak font spacing for aesthetics
+\usepackage{cmbright}                                 % Font
+\usepackage[utf8]{inputenc}                           % Includes letters with accents
+\usepackage[T1]{fontenc}                              % 8-bit encoding with 256 glyphs
+\usepackage[colorlinks = true,
+            allcolors = black]{hyperref}              % Hyper-references in PDF
+\usepackage{subfigure}                                % Multiple figures environment
+\usepackage{amsmath}                                  % Standard maths
+\usepackage{amssymb}                                  % Standard maths symbols
+\usepackage{graphicx}                                 % Include graphics
+\usepackage{booktabs}                                 % Professional tables
+\usepackage[english]{babel}                           % Babel and language definitions
+\usepackage[a4paper,                                  % Paper size
+            top = 25mm,                               % Top margin
+            bottom = 25mm,                            % Bottom margin
+            left = 25mm,                              % Left margin
+            right = 25mm]{geometry}                   % Right margin
+\usepackage{xcolor}                                   % Advanced colours
+\usepackage{soul}                                     % Highlight text and other text things
+\usepackage{caption}                                  % Manage captions in floats
+\usepackage{textcomp}                                 % Includes euro symbol
+\usepackage{ifthen}                                   % Use of conditional \if
+\usepackage{fmtcount}                                 % Convert integers to words
+\usepackage[per-mode = symbol]{siunitx}	              % To use SI units
+\usepackage[version=4]{mhchem}                        % For writing chemical symbols
+\usepackage{totcount}                                 % Display points counter at beginning 
+\usepackage{xstring}                                  % To manipulate strings
+\usepackage{multicol}                                 % Multiple column environment (FS)
+\usepackage{lipsum,turnthepage}
+\usepackage{wasysym}                                  % Symbols for multiple choice quesitons
+
+% -----------------------------------------------------
+% DOCUMENT DEFINITIONS
+% -----------------------------------------------------
+\pointsinrightmargin                                  % Points on the right margin
+\pointformat{\bfseries(\themarginpoints)}             % Points in bold and bracket style
+\renewcommand{\partlabel}{\bfseries{(\thepartno)}}    % Bold part numbers
+\renewcommand{\subpartlabel}{\bfseries{\thesubpart)}} % Bold part numbers
+\pagestyle{headandfoot}                               % Solution header and footer
+\header{}{}{}                                         % Solution header
+\footer{}{}{\theCourseCode{}                          % Solution footer
+            \theCourse{} --- \theExamDate{}
+            (\theDiet)} 
+\graphicspath{{Images/}}                              % Directory where pictures are stored
+\definecolor{myRed}{RGB}{184,0,1}                     % Define new colour
+\definecolor{myGrey}{RGB}{211,211,211}                % Define new colour
+\checkedchar{\large $\CIRCLE$}
+\setlength{\fboxrule}{0pt}
+
+% -----------------------------------------------------
+% NEW COMMANDS
+% -----------------------------------------------------
+\newtotcounter{pointsCounter}                         % Counter for total number of points in parts
+\newtotcounter{numberOfSections}                      % Counter for number of sections
+\newtotcounter{numberOfQuestions}                     % Counter for number of questions
+
+\newcommand{\sectionStart}{                           % Initiate new sections
+    \setcounter{question}{0}                          % (Re)initiate questions counter
+    \setcounter{figure}{0}                            % Initiate figure counter
+    \setcounter{table}{0}                             % Initiate table counter
+    \qformat{\ifthenelse{\equal{\thequestion}{1}}
+        {\fbox{\parbox{16cm}{\textbf{\large SECTION \Alph{numberOfSections} \hfill\vrule depth 0.5em width 0pt \\ Question \Alph{numberOfSections}\thequestion}} \hfill\vrule depth 1.5em width 0pt}}
+        {\fbox{\parbox{16cm}{\textbf{Question \Alph{numberOfSections}\thequestion}} \hfill\vrule depth 0.8em width 0pt}}
+    }
+    \stepcounter{numberOfSections}                    % Increment sections counter
+}
+
+\newcommand{\callQuestion}[2]{                        % Call new question
+    \cleardoublepage \input{#1}                       % Start question in new page
+    \addtocounter{pointsCounter}{#2}                  % Add points to counter
+    \addtocounter{numberOfQuestions}{1}               % Increment questions counter
+    \stepcounter{figure}                              % Increment figure counter
+    \stepcounter{table}                               % Increment table counter
+}
+
+\newcommand{\callFormulaSheet}[1]{
+    \ifthenelse{\equal{\formulaSheet}{Yes} \OR \equal{\formulaSheet}{Y} \OR \equal{\formulaSheet}{yes} \OR \equal{\formulaSheet}{y} \OR \equal{\formulaSheet}{YES}}{\cleardoublepage \input{#1}}{}
+}
+
+\newcommand{\headingFormulaSheet}{
+    \pagestyle{empty}
+    \setlength{\textwidth}{180mm}
+    \setlength{\textheight}{265mm}
+    \setlength{\topmargin}{-20mm}
+    \setlength\oddsidemargin{-12mm}
+    \setlength\evensidemargin{-12mm}
+    \setlength{\columnsep}{10mm}
+    \setlength{\columnseprule}{0.4pt}
+    \setlength{\jot}{5pt}
+    \setlength\parindent{0pt}
+%
+    \twocolumn
+    \fcolorbox{white}{myGrey}{\begin{minipage}{20em}
+        \centering \vspace{4mm} {\Large \textbf{Formula Sheet}} \\ 
+        \theCourse\ (\theCourseCode) \\
+        {\small \theExamDate{} (\theDiet)} \vspace{3mm} 
+    \end{minipage}}
+}
+
+% -----------------------------------------------------
+% TITLES AND FORMATS
+% -----------------------------------------------------
+%\qformat{\textbf{\large Question \thequestion} \hfill\vrule depth 1.5em width 0pt} 
+                                                      % Format of question title - numbered questions, no parts
+\pointname{}                                          % No title for marks
+\pointsdroppedatright                                 % Marks at right margin
+\framedsolutions                                      % Add frame to solutions
+\addto\captionsenglish{                               % Format Figure labels
+    \renewcommand\figurename{Figure Q}}
+\addto\captionsenglish{                               % Format Table labels
+    \renewcommand\tablename{Table Q}}
+\makeatletter
+\def\fnum@figure{\figurename\Alph{numberOfSections}\thefigure}
+\def\fnum@table{\tablename\Alph{numberOfSections}\thetable}
+\makeatother
+\renewcommand{\solutiontitle}{
+   \noindent\textbf{Marking guidelines:}\par\noindent}  % Rename solutions
+
